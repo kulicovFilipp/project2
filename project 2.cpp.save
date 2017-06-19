@@ -1,6 +1,6 @@
 #include "filipplib.h"
 
-const int Type_circle = 1,
+const int Type_circle = 1, 
           Type_cube   = 2;
 
 struct Object
@@ -9,7 +9,7 @@ struct Object
     int vx, vy;
     HDC hdc;
     int width, height;
-
+    
     int type;
 
     void draw();
@@ -107,8 +107,8 @@ void game (HDC cube, HDC circle, HDC shadow)
             geometry [i].draw ();
             i++;
             }
-
-
+            
+        
 
 
 
