@@ -101,7 +101,7 @@ void game (HDC cube, HDC circle, HDC shadow)
                 }
             if (geometry [i].type == Type_cube)
                 {
-                geometry [i].physicsCube (dt)
+                geometry [i].physicsCube (dt);
                 }
           //geometry [i].physics (dt);
             geometry [i].draw ();
@@ -279,39 +279,7 @@ void set_damage (int radius, double damage, Object* object1, Object* object2, do
         }
     }
 
-void Object::run (Object geometry [], int size, int dt)
-    {
-    int i = 0;
-    while (i < size)
-        {
-        geometry [i].physics (dt);
-        geometry [i].draw ();
-        i++;
-        }
-    }
-void Object::paramiter (int dt)
-    {
-int i = 0;
-        while (i < sizearr(geometry))
-            {
-            geometry [i].physics (dt);
-            geometry [i].draw ();
-            i++;
-            }
 
-         }
-
-void Object::circleParamiter (int dt)
-    {
-int i = 0;
-        while (i < sizearr(geometry))
-            {
-            geometry [i].physicsCircle (dt);
-            geometry [i].draw ();
-            i++;
-            }
-
-     }
 
 
 
