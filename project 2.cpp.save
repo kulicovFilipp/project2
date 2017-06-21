@@ -1,7 +1,10 @@
 #include "filipplib.h"
 
-const int Type_circle = 1, 
+const int Type_circle = 1,
           Type_cube   = 2;
+          Type2_circle = 3,
+          Type2)cube = 4;
+          
 
 struct Object
     {
@@ -9,8 +12,9 @@ struct Object
     int vx, vy;
     HDC hdc;
     int width, height;
-    
+
     int type;
+    int type2;
 
     void draw();
     void physicsCube (int dt);
@@ -73,7 +77,7 @@ void game (HDC cube, HDC circle, HDC shadow)
                            {szX (8),  szY (8),  1, 9, 10, cube,   70, 70, Type_cube},
                            {szX (92), szY (92), 1, 9, 10, cube,   70, 70, Type_cube},
                            {szX (92), szY (8),  1, 9, 10, cube,   70, 70, Type_cube},
-                           {szX (8),  szY (92), 1, 9, 10, cube,   70, 70, Type_cube} };
+                           {szX (8),  szY (92), 1, 9, 10, cube,   70, 70, Type_cube, Type2_cube} };
 
 
 
@@ -101,14 +105,14 @@ void game (HDC cube, HDC circle, HDC shadow)
                 }
             if (geometry [i].type == Type_cube)
                 {
-                geometry [i].physicsCube (dt)
+                geometry [i].physicsCube (dt);
                 }
           //geometry [i].physics (dt);
             geometry [i].draw ();
             i++;
             }
-            
-        
+
+
 
 
 
@@ -182,7 +186,7 @@ void Object::physicsCircle (int dt)
 
     if  (x >= txGetExtentX())
         {
-        x = 0;
+        x = 10;
         }
     if  (y >= txGetExtentY())
         {
@@ -279,39 +283,7 @@ void set_damage (int radius, double damage, Object* object1, Object* object2, do
         }
     }
 
-void Object::run (Object geometry [], int size, int dt)
-    {
-    int i = 0;
-    while (i < size)
-        {
-        geometry [i].physics (dt);
-        geometry [i].draw ();
-        i++;
-        }
-    }
-void Object::paramiter (int dt)
-    {
-int i = 0;
-        while (i < sizearr(geometry))
-            {
-            geometry [i].physics (dt);
-            geometry [i].draw ();
-            i++;
-            }
 
-         }
-
-void Object::circleParamiter (int dt)
-    {
-int i = 0;
-        while (i < sizearr(geometry))
-            {
-            geometry [i].physicsCircle (dt);
-            geometry [i].draw ();
-            i++;
-            }
-
-     }
 
 
 

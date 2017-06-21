@@ -3,6 +3,7 @@
 const int Type_circle = 1,
           Type_cube   = 2;
 
+
 struct Object
     {
     int x, y, z;
@@ -12,7 +13,9 @@ struct Object
 
     int type;
 
-    void draw();
+
+    void drawCircle();
+    void drawCube ();
     void physicsCube (int dt);
     void physicsCircle (int dt);
     void control ();
@@ -98,13 +101,15 @@ void game (HDC cube, HDC circle, HDC shadow)
             if (geometry [i].type == Type_circle)
                 {
                 geometry [i].physicsCircle (dt);
+                geometry [i].drawCircle ();
                 }
             if (geometry [i].type == Type_cube)
                 {
                 geometry [i].physicsCube (dt);
+                geometry [i].drawCube ();
                 }
           //geometry [i].physics (dt);
-            geometry [i].draw ();
+          //  geometry [i].draw ();
             i++;
             }
 
@@ -131,11 +136,16 @@ void game (HDC cube, HDC circle, HDC shadow)
         }
     }
 
-void Object::draw ()
+void Object::drawCircle ()
     {
     alphaBlend (x, y, width, height, hdc, 0, 0, width, height, 1);
     //alphaBlend (x, y, 50, 57, hdc, 0, 0, 50, 57, 1);
     //txAlphaBlend (txDC(), x, y, width, height, hdc, 0, 0);
+    }
+
+void Object::drawCube ()
+    {
+    alphaBlend (x, y, width, height, hdc, 0, 0, width, height, 1);
     }
 
 int szX (double x)
@@ -182,7 +192,7 @@ void Object::physicsCircle (int dt)
 
     if  (x >= txGetExtentX())
         {
-        x = 0;
+        x = 10;
         }
     if  (y >= txGetExtentY())
         {
