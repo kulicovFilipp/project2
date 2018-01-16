@@ -1,0 +1,455 @@
+
+--------------------------------------------------
+TXLib сообщает:
+
+Программа: C:\Users\user\Desktop\project2\036-hellow-fill-hegdehogs_animation_and_something_else.exe, файл: C:\Users\user\TX\TXLib.h, строка: 11042, функция: bool {anonymous}::TX::txBitBlt(HDC, double, double, double, double, HDC, double, double),
+
+Сообщение: Параметр "sourceImage" неверен. Возможно, этот холст не создан, или уже уничтожен, или не загрузилась картинка.
+
+#1: TXLib [Ver: 00173a, Rev: 105], Instance: 0x005092C0 (32-bit), Flags: CMdRe0, Thread: 0x1088 (Main), GetLastError(): 13 (Недопустимые данные). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0041F93D in C:\Users\user\Desktop\project2\036-hellow-fill-hegdehogs_animation_and_something_else.exe: txBitBlt() at C:/Users/user/TX/TXLib.h (11042)
+
+# 1 0x0042844F in C:\Users\user\Desktop\project2\036-hellow-fill-hegdehogs_animation_and_something_else.exe: bushruns() at C:/Users/user/Desktop/project2/036-hellow-fill-hegdehogs_animation_and_something_else.cpp (228):
+
+    226:         txSetFillColor (TX_BLUE);
+    227: 
+=>  228:         txBitBlt (txDC(), 0, 0, 0, 0, altar, 0, 0);
+    229: 
+    230:         txAlphaBlend (txDC(), txGetExtentX()/2 - 300/2, txGetExtentY()/2 - 285/2, 300, 285, MagicAltar);
+
+# 2 0x00427E06 in C:\Users\user\Desktop\project2\036-hellow-fill-hegdehogs_animation_and_something_else.exe: main() at C:/Users/user/Desktop/project2/036-hellow-fill-hegdehogs_animation_and_something_else.cpp (135):
+
+    133:     HDC MagicAltar = txLoadImage ("скатерть.BMP");
+    134: 
+=>  135:     bushruns (desk, altar, hegdehog, bat, rat, solider, cat, MagicAltar);
+    136: 
+    137:     txDeleteDC (desk);
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in bool {anonymous}::TX::txBitBlt(HDC, double, double, double, double, HDC, double, double) at C:\Users\user\TX\TXLib.h (11042):
+
+  11040:     {
+  11041: $1  if (_TX_HDC_FAILED (destImage))   return false;
+=>11042: $   if (_TX_HDC_FAILED (sourceImage)) return false;
+  11043: 
+  11044: $   POINT size = txGetExtent (sourceImage);
+
+# 1 in void bushruns(HDC, HDC, HDC, HDC, HDC, HDC, HDC, HDC) at C:\Users\user\Desktop\project2\036-hellow-fill-hegdehogs_animation_and_something_else.cpp (228):
+
+    226:         txSetFillColor (TX_BLUE);
+    227: 
+=>  228:         txBitBlt (txDC(), 0, 0, 0, 0, altar, 0, 0);
+    229: 
+    230:         txAlphaBlend (txDC(), txGetExtentX()/2 - 300/2, txGetExtentY()/2 - 285/2, 300, 285, MagicAltar);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library) - TXLib [Ver: 00173a, Rev: 105]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	C:\Users\user\TX\TXLib.h
+Compiled:	Aug 29 2017 22:29:25, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Aug 29 2017 22:29:29
+
+Run file:	C:\Users\user\Desktop\project2\036-hellow-fill-hegdehogs_animation_and_something_else.exe
+Directory:	C:\Users\user\Desktop\project2
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib сообщает:
+
+Программа: C:\Users\user\Desktop\project2\036-hellow-fill-hegdehogs_animation_and_something_else.exe, файл: C:\Users\user\TX\TXLib.h, строка: 11042, функция: bool {anonymous}::TX::txBitBlt(HDC, double, double, double, double, HDC, double, double),
+
+Сообщение: Параметр "sourceImage" неверен. Возможно, этот холст не создан, или уже уничтожен, или не загрузилась картинка.
+
+#1: TXLib [Ver: 00173a, Rev: 105], Instance: 0x005092C0 (32-bit), Flags: CMdRe0, Thread: 0x24B8 (Main), GetLastError(): 13 (Недопустимые данные). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0041F93D in C:\Users\user\Desktop\project2\036-hellow-fill-hegdehogs_animation_and_something_else.exe: txBitBlt() at C:/Users/user/TX/TXLib.h (11042)
+
+# 1 0x0042844F in C:\Users\user\Desktop\project2\036-hellow-fill-hegdehogs_animation_and_something_else.exe: bushruns() at C:/Users/user/Desktop/project2/036-hellow-fill-hegdehogs_animation_and_something_else.cpp (228):
+
+    226:         txSetFillColor (TX_BLUE);
+    227: 
+=>  228:         txBitBlt (txDC(), 0, 0, 0, 0, altar, 0, 0);
+    229: 
+    230:         txAlphaBlend (txDC(), txGetExtentX()/2 - 300/2, txGetExtentY()/2 - 285/2, 300, 285, MagicAltar);
+
+# 2 0x00427E06 in C:\Users\user\Desktop\project2\036-hellow-fill-hegdehogs_animation_and_something_else.exe: main() at C:/Users/user/Desktop/project2/036-hellow-fill-hegdehogs_animation_and_something_else.cpp (135):
+
+    133:     HDC MagicAltar = txLoadImage ("скатерть.BMP");
+    134: 
+=>  135:     bushruns (desk, altar, hegdehog, bat, rat, solider, cat, MagicAltar);
+    136: 
+    137:     txDeleteDC (desk);
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in bool {anonymous}::TX::txBitBlt(HDC, double, double, double, double, HDC, double, double) at C:\Users\user\TX\TXLib.h (11042):
+
+  11040:     {
+  11041: $1  if (_TX_HDC_FAILED (destImage))   return false;
+=>11042: $   if (_TX_HDC_FAILED (sourceImage)) return false;
+  11043: 
+  11044: $   POINT size = txGetExtent (sourceImage);
+
+# 1 in void bushruns(HDC, HDC, HDC, HDC, HDC, HDC, HDC, HDC) at C:\Users\user\Desktop\project2\036-hellow-fill-hegdehogs_animation_and_something_else.cpp (228):
+
+    226:         txSetFillColor (TX_BLUE);
+    227: 
+=>  228:         txBitBlt (txDC(), 0, 0, 0, 0, altar, 0, 0);
+    229: 
+    230:         txAlphaBlend (txDC(), txGetExtentX()/2 - 300/2, txGetExtentY()/2 - 285/2, 300, 285, MagicAltar);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library) - TXLib [Ver: 00173a, Rev: 105]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	C:\Users\user\TX\TXLib.h
+Compiled:	Aug 30 2017 15:16:09, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Aug 30 2017 15:16:13
+
+Run file:	C:\Users\user\Desktop\project2\036-hellow-fill-hegdehogs_animation_and_something_else.exe
+Directory:	C:\Users\user\Desktop\project2
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib сообщает:
+
+Программа: C:\Users\user\Desktop\project2\036-hellow-fill-hegdehogs_animation_and_something_else.exe, файл: C:\Users\user\TX\TXLib.h, строка: 11042, функция: bool {anonymous}::TX::txBitBlt(HDC, double, double, double, double, HDC, double, double),
+
+Сообщение: Параметр "sourceImage" неверен. Возможно, этот холст не создан, или уже уничтожен, или не загрузилась картинка.
+
+#2: TXLib [Ver: 00173a, Rev: 105], Instance: 0x005092C0 (32-bit), Flags: CMdRe0, Thread: 0x24B8 (Main), GetLastError(): 13 (Недопустимые данные). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0041F93D in C:\Users\user\Desktop\project2\036-hellow-fill-hegdehogs_animation_and_something_else.exe: txBitBlt() at C:/Users/user/TX/TXLib.h (11042)
+
+# 1 0x0042844F in C:\Users\user\Desktop\project2\036-hellow-fill-hegdehogs_animation_and_something_else.exe: bushruns() at C:/Users/user/Desktop/project2/036-hellow-fill-hegdehogs_animation_and_something_else.cpp (228):
+
+    226:         txSetFillColor (TX_BLUE);
+    227: 
+=>  228:         txBitBlt (txDC(), 0, 0, 0, 0, altar, 0, 0);
+    229: 
+    230:         txAlphaBlend (txDC(), txGetExtentX()/2 - 300/2, txGetExtentY()/2 - 285/2, 300, 285, MagicAltar);
+
+# 2 0x00427E06 in C:\Users\user\Desktop\project2\036-hellow-fill-hegdehogs_animation_and_something_else.exe: main() at C:/Users/user/Desktop/project2/036-hellow-fill-hegdehogs_animation_and_something_else.cpp (135):
+
+    133:     HDC MagicAltar = txLoadImage ("скатерть.BMP");
+    134: 
+=>  135:     bushruns (desk, altar, hegdehog, bat, rat, solider, cat, MagicAltar);
+    136: 
+    137:     txDeleteDC (desk);
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in bool {anonymous}::TX::txBitBlt(HDC, double, double, double, double, HDC, double, double) at C:\Users\user\TX\TXLib.h (11042):
+
+  11040:     {
+  11041: $1  if (_TX_HDC_FAILED (destImage))   return false;
+=>11042: $   if (_TX_HDC_FAILED (sourceImage)) return false;
+  11043: 
+  11044: $   POINT size = txGetExtent (sourceImage);
+
+# 1 in void bushruns(HDC, HDC, HDC, HDC, HDC, HDC, HDC, HDC) at C:\Users\user\Desktop\project2\036-hellow-fill-hegdehogs_animation_and_something_else.cpp (228):
+
+    226:         txSetFillColor (TX_BLUE);
+    227: 
+=>  228:         txBitBlt (txDC(), 0, 0, 0, 0, altar, 0, 0);
+    229: 
+    230:         txAlphaBlend (txDC(), txGetExtentX()/2 - 300/2, txGetExtentY()/2 - 285/2, 300, 285, MagicAltar);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library) - TXLib [Ver: 00173a, Rev: 105]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	C:\Users\user\TX\TXLib.h
+Compiled:	Aug 30 2017 15:16:09, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Aug 30 2017 15:16:13
+
+Run file:	C:\Users\user\Desktop\project2\036-hellow-fill-hegdehogs_animation_and_something_else.exe
+Directory:	C:\Users\user\Desktop\project2
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib сообщает:
+
+Программа: C:\Users\user\Desktop\project2\036-hellow-fill-hegdehogs_animation_and_something_else.exe, файл: C:\Users\user\TX\TXLib.h, строка: 11042, функция: bool {anonymous}::TX::txBitBlt(HDC, double, double, double, double, HDC, double, double),
+
+Сообщение: Параметр "sourceImage" неверен. Возможно, этот холст не создан, или уже уничтожен, или не загрузилась картинка.
+
+#3: TXLib [Ver: 00173a, Rev: 105], Instance: 0x005092C0 (32-bit), Flags: CMdRe0, Thread: 0x24B8 (Main), GetLastError(): 13 (Недопустимые данные). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0041F93D in C:\Users\user\Desktop\project2\036-hellow-fill-hegdehogs_animation_and_something_else.exe: txBitBlt() at C:/Users/user/TX/TXLib.h (11042)
+
+# 1 0x0042844F in C:\Users\user\Desktop\project2\036-hellow-fill-hegdehogs_animation_and_something_else.exe: bushruns() at C:/Users/user/Desktop/project2/036-hellow-fill-hegdehogs_animation_and_something_else.cpp (228):
+
+    226:         txSetFillColor (TX_BLUE);
+    227: 
+=>  228:         txBitBlt (txDC(), 0, 0, 0, 0, altar, 0, 0);
+    229: 
+    230:         txAlphaBlend (txDC(), txGetExtentX()/2 - 300/2, txGetExtentY()/2 - 285/2, 300, 285, MagicAltar);
+
+# 2 0x00427E06 in C:\Users\user\Desktop\project2\036-hellow-fill-hegdehogs_animation_and_something_else.exe: main() at C:/Users/user/Desktop/project2/036-hellow-fill-hegdehogs_animation_and_something_else.cpp (135):
+
+    133:     HDC MagicAltar = txLoadImage ("скатерть.BMP");
+    134: 
+=>  135:     bushruns (desk, altar, hegdehog, bat, rat, solider, cat, MagicAltar);
+    136: 
+    137:     txDeleteDC (desk);
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in bool {anonymous}::TX::txBitBlt(HDC, double, double, double, double, HDC, double, double) at C:\Users\user\TX\TXLib.h (11042):
+
+  11040:     {
+  11041: $1  if (_TX_HDC_FAILED (destImage))   return false;
+=>11042: $   if (_TX_HDC_FAILED (sourceImage)) return false;
+  11043: 
+  11044: $   POINT size = txGetExtent (sourceImage);
+
+# 1 in void bushruns(HDC, HDC, HDC, HDC, HDC, HDC, HDC, HDC) at C:\Users\user\Desktop\project2\036-hellow-fill-hegdehogs_animation_and_something_else.cpp (228):
+
+    226:         txSetFillColor (TX_BLUE);
+    227: 
+=>  228:         txBitBlt (txDC(), 0, 0, 0, 0, altar, 0, 0);
+    229: 
+    230:         txAlphaBlend (txDC(), txGetExtentX()/2 - 300/2, txGetExtentY()/2 - 285/2, 300, 285, MagicAltar);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library) - TXLib [Ver: 00173a, Rev: 105]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	C:\Users\user\TX\TXLib.h
+Compiled:	Aug 30 2017 15:16:09, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Aug 30 2017 15:16:13
+
+Run file:	C:\Users\user\Desktop\project2\036-hellow-fill-hegdehogs_animation_and_something_else.exe
+Directory:	C:\Users\user\Desktop\project2
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib сообщает:
+
+Программа: C:\Users\user\Desktop\project2\036-hellow-fill-hegdehogs_animation_and_something_else.exe, файл: C:\Users\user\TX\TXLib.h, строка: 11042, функция: bool {anonymous}::TX::txBitBlt(HDC, double, double, double, double, HDC, double, double),
+
+Сообщение: Параметр "sourceImage" неверен. Возможно, этот холст не создан, или уже уничтожен, или не загрузилась картинка.
+
+#4: TXLib [Ver: 00173a, Rev: 105], Instance: 0x005092C0 (32-bit), Flags: CMdRe0, Thread: 0x24B8 (Main), GetLastError(): 13 (Недопустимые данные). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0041F93D in C:\Users\user\Desktop\project2\036-hellow-fill-hegdehogs_animation_and_something_else.exe: txBitBlt() at C:/Users/user/TX/TXLib.h (11042)
+
+# 1 0x0042844F in C:\Users\user\Desktop\project2\036-hellow-fill-hegdehogs_animation_and_something_else.exe: bushruns() at C:/Users/user/Desktop/project2/036-hellow-fill-hegdehogs_animation_and_something_else.cpp (228):
+
+    226:         txSetFillColor (TX_BLUE);
+    227: 
+=>  228:         txBitBlt (txDC(), 0, 0, 0, 0, altar, 0, 0);
+    229: 
+    230:         txAlphaBlend (txDC(), txGetExtentX()/2 - 300/2, txGetExtentY()/2 - 285/2, 300, 285, MagicAltar);
+
+# 2 0x00427E06 in C:\Users\user\Desktop\project2\036-hellow-fill-hegdehogs_animation_and_something_else.exe: main() at C:/Users/user/Desktop/project2/036-hellow-fill-hegdehogs_animation_and_something_else.cpp (135):
+
+    133:     HDC MagicAltar = txLoadImage ("скатерть.BMP");
+    134: 
+=>  135:     bushruns (desk, altar, hegdehog, bat, rat, solider, cat, MagicAltar);
+    136: 
+    137:     txDeleteDC (desk);
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in bool {anonymous}::TX::txBitBlt(HDC, double, double, double, double, HDC, double, double) at C:\Users\user\TX\TXLib.h (11042):
+
+  11040:     {
+  11041: $1  if (_TX_HDC_FAILED (destImage))   return false;
+=>11042: $   if (_TX_HDC_FAILED (sourceImage)) return false;
+  11043: 
+  11044: $   POINT size = txGetExtent (sourceImage);
+
+# 1 in void bushruns(HDC, HDC, HDC, HDC, HDC, HDC, HDC, HDC) at C:\Users\user\Desktop\project2\036-hellow-fill-hegdehogs_animation_and_something_else.cpp (228):
+
+    226:         txSetFillColor (TX_BLUE);
+    227: 
+=>  228:         txBitBlt (txDC(), 0, 0, 0, 0, altar, 0, 0);
+    229: 
+    230:         txAlphaBlend (txDC(), txGetExtentX()/2 - 300/2, txGetExtentY()/2 - 285/2, 300, 285, MagicAltar);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library) - TXLib [Ver: 00173a, Rev: 105]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	C:\Users\user\TX\TXLib.h
+Compiled:	Aug 30 2017 15:16:09, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Aug 30 2017 15:16:13
+
+Run file:	C:\Users\user\Desktop\project2\036-hellow-fill-hegdehogs_animation_and_something_else.exe
+Directory:	C:\Users\user\Desktop\project2
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib сообщает:
+
+Программа: C:\Users\user\Desktop\project2\036-hellow-fill-hegdehogs_animation_and_something_else.exe, файл: C:\Users\user\TX\TXLib.h, строка: 11042, функция: bool {anonymous}::TX::txBitBlt(HDC, double, double, double, double, HDC, double, double),
+
+Сообщение: Параметр "sourceImage" неверен. Возможно, этот холст не создан, или уже уничтожен, или не загрузилась картинка.
+
+#5: TXLib [Ver: 00173a, Rev: 105], Instance: 0x005092C0 (32-bit), Flags: CMdRe0, Thread: 0x24B8 (Main), GetLastError(): 13 (Недопустимые данные). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0041F93D in C:\Users\user\Desktop\project2\036-hellow-fill-hegdehogs_animation_and_something_else.exe: txBitBlt() at C:/Users/user/TX/TXLib.h (11042)
+
+# 1 0x0042844F in C:\Users\user\Desktop\project2\036-hellow-fill-hegdehogs_animation_and_something_else.exe: bushruns() at C:/Users/user/Desktop/project2/036-hellow-fill-hegdehogs_animation_and_something_else.cpp (228):
+
+    226:         txSetFillColor (TX_BLUE);
+    227: 
+=>  228:         txBitBlt (txDC(), 0, 0, 0, 0, altar, 0, 0);
+    229: 
+    230:         txAlphaBlend (txDC(), txGetExtentX()/2 - 300/2, txGetExtentY()/2 - 285/2, 300, 285, MagicAltar);
+
+# 2 0x00427E06 in C:\Users\user\Desktop\project2\036-hellow-fill-hegdehogs_animation_and_something_else.exe: main() at C:/Users/user/Desktop/project2/036-hellow-fill-hegdehogs_animation_and_something_else.cpp (135):
+
+    133:     HDC MagicAltar = txLoadImage ("скатерть.BMP");
+    134: 
+=>  135:     bushruns (desk, altar, hegdehog, bat, rat, solider, cat, MagicAltar);
+    136: 
+    137:     txDeleteDC (desk);
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in bool {anonymous}::TX::txBitBlt(HDC, double, double, double, double, HDC, double, double) at C:\Users\user\TX\TXLib.h (11042):
+
+  11040:     {
+  11041: $1  if (_TX_HDC_FAILED (destImage))   return false;
+=>11042: $   if (_TX_HDC_FAILED (sourceImage)) return false;
+  11043: 
+  11044: $   POINT size = txGetExtent (sourceImage);
+
+# 1 in void bushruns(HDC, HDC, HDC, HDC, HDC, HDC, HDC, HDC) at C:\Users\user\Desktop\project2\036-hellow-fill-hegdehogs_animation_and_something_else.cpp (228):
+
+    226:         txSetFillColor (TX_BLUE);
+    227: 
+=>  228:         txBitBlt (txDC(), 0, 0, 0, 0, altar, 0, 0);
+    229: 
+    230:         txAlphaBlend (txDC(), txGetExtentX()/2 - 300/2, txGetExtentY()/2 - 285/2, 300, 285, MagicAltar);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library) - TXLib [Ver: 00173a, Rev: 105]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	C:\Users\user\TX\TXLib.h
+Compiled:	Aug 30 2017 15:16:09, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Aug 30 2017 15:16:13
+
+Run file:	C:\Users\user\Desktop\project2\036-hellow-fill-hegdehogs_animation_and_something_else.exe
+Directory:	C:\Users\user\Desktop\project2
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib сообщает:
+
+Программа: C:\Users\user\Desktop\project2\036-hellow-fill-hegdehogs_animation_and_something_else.exe, файл: C:\Users\user\TX\TXLib.h, строка: 11042, функция: bool {anonymous}::TX::txBitBlt(HDC, double, double, double, double, HDC, double, double),
+
+Сообщение: Параметр "sourceImage" неверен. Возможно, этот холст не создан, или уже уничтожен, или не загрузилась картинка.
+
+#6: TXLib [Ver: 00173a, Rev: 105], Instance: 0x005092C0 (32-bit), Flags: CMdRe0, Thread: 0x24B8 (Main), GetLastError(): 13 (Недопустимые данные). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0041F93D in C:\Users\user\Desktop\project2\036-hellow-fill-hegdehogs_animation_and_something_else.exe: txBitBlt() at C:/Users/user/TX/TXLib.h (11042)
+
+# 1 0x0042844F in C:\Users\user\Desktop\project2\036-hellow-fill-hegdehogs_animation_and_something_else.exe: bushruns() at C:/Users/user/Desktop/project2/036-hellow-fill-hegdehogs_animation_and_something_else.cpp (228):
+
+    226:         txSetFillColor (TX_BLUE);
+    227: 
+=>  228:         txBitBlt (txDC(), 0, 0, 0, 0, altar, 0, 0);
+    229: 
+    230:         txAlphaBlend (txDC(), txGetExtentX()/2 - 300/2, txGetExtentY()/2 - 285/2, 300, 285, MagicAltar);
+
+# 2 0x00427E06 in C:\Users\user\Desktop\project2\036-hellow-fill-hegdehogs_animation_and_something_else.exe: main() at C:/Users/user/Desktop/project2/036-hellow-fill-hegdehogs_animation_and_something_else.cpp (135):
+
+    133:     HDC MagicAltar = txLoadImage ("скатерть.BMP");
+    134: 
+=>  135:     bushruns (desk, altar, hegdehog, bat, rat, solider, cat, MagicAltar);
+    136: 
+    137:     txDeleteDC (desk);
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in bool {anonymous}::TX::txBitBlt(HDC, double, double, double, double, HDC, double, double) at C:\Users\user\TX\TXLib.h (11042):
+
+  11040:     {
+  11041: $1  if (_TX_HDC_FAILED (destImage))   return false;
+=>11042: $   if (_TX_HDC_FAILED (sourceImage)) return false;
+  11043: 
+  11044: $   POINT size = txGetExtent (sourceImage);
+
+# 1 in void bushruns(HDC, HDC, HDC, HDC, HDC, HDC, HDC, HDC) at C:\Users\user\Desktop\project2\036-hellow-fill-hegdehogs_animation_and_something_else.cpp (228):
+
+    226:         txSetFillColor (TX_BLUE);
+    227: 
+=>  228:         txBitBlt (txDC(), 0, 0, 0, 0, altar, 0, 0);
+    229: 
+    230:         txAlphaBlend (txDC(), txGetExtentX()/2 - 300/2, txGetExtentY()/2 - 285/2, 300, 285, MagicAltar);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library) - TXLib [Ver: 00173a, Rev: 105]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	C:\Users\user\TX\TXLib.h
+Compiled:	Aug 30 2017 15:16:09, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Aug 30 2017 15:16:13
+
+Run file:	C:\Users\user\Desktop\project2\036-hellow-fill-hegdehogs_animation_and_something_else.exe
+Directory:	C:\Users\user\Desktop\project2
+
+--------------------------------------------------

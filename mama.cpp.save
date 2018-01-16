@@ -1,0 +1,20 @@
+#include "filipplib.h"
+
+void menu ();
+
+int main()
+    {
+    txTextCursor (false);
+    txCreateWindow (1300, 700);
+    menu ();
+    }
+
+void menu ()
+    {
+
+    txSetColor     (RGB ());
+    txSetFillColor (RGB ());
+    txSelectFont   ("Comic Sans MS", 70);
+    txRectangle    (300, 250, 1000, 350);
+    txTextOut      (400, 400, "Select character");
+    }

@@ -1,0 +1,145 @@
+#include "filiplib.h" // рекорд 34
+
+
+void menu (HDC MainImage, HDC Play_StartPage, HDC GrayPlay);
+
+void MainControl (double* vx, double* vy);
+
+
+
+
+
+int main ()
+    {
+    txCreateWindow (GetSystemMetrics (SM_CXSCREEN) - 15, GetSystemMetrics (SM_CYSCREEN) - 55);
+
+    HDC MainImage      = txLoadImage ("gc.BMP");
+
+    HDC Play_StartPage = txLoadImage ("ButtonPlay2.BMP");
+
+    HDC GrayPlay     = txLoadImage ("GrayPlayer.BMP");
+
+    menu (MainImage, Play_StartPage, GrayPlay);
+    }
+
+void menu (HDC MainImage, HDC Play_StartPage, HDC GrayPlay)
+    {
+
+    double x0 = 450, y0 = 350, vx = 5, vy = 7;
+
+    int dt = 1;
+
+    txBitBlt (txDC(), 375, 9, 650, 675, MainImage, 0, 0);
+    txSelectFont ("Rockletter simple", 75);
+    txTextOut (810, 277, "PLAY");
+    //txBitBlt (txDC(), 375, 9, 267, 86, Play_StartPage, 0, 0);
+
+    txBitBlt (txDC(), x0, y0, 43, 43, GrayPlay, 0, 0);
+
+    for (double time = 1;time <= 2100; time += 0.15)
+        {
+        x0 = x0 + vx * dt;
+        y0 = y0 + vy * dt;
+        MainControl (&vx, &vy);
+        //mainPhysics (&grayPaladin, dt);
+
+//{    мен€ющ€€ цвет надпись Geometry crash
+        if (time <=  250) // зелЄный
+            {
+            txSetColor (RGB (0, 255, 0));
+            txSelectFont ("Rockletter simple", 75);
+            txTextOut (400, 35, "Geometry");
+            txTextOut (490, 80, "Crash");
+            }
+        if (time >=  260) // красный
+            {
+            if (time <= 500)
+                {
+                txSetColor (RGB (255, 0, 0));
+                txSelectFont ("Rockletter simple", 75);
+                txTextOut (400, 35, "Geometry");
+                txTextOut (490, 80, "Crash");
+                }
+            }
+        if (time >=  510) // синий
+            {
+            if (time <= 750)
+                {
+                txSetColor (RGB (0, 0, 255));
+                txSelectFont ("Rockletter simple", 75);
+                txTextOut (400, 35, "Geometry");
+                txTextOut (490, 80, "Crash");
+                }
+            }
+        if (time >=  760) // фиолетовый
+            {
+            if (time <= 1010)
+                {
+                txSetColor (RGB (245, 10, 230));
+                txSelectFont ("Rockletter simple", 75);
+                txTextOut (400, 35, "Geometry");
+                txTextOut (490, 80, "Crash");
+                }
+            }
+        if (time >= 1020) // жЄлтый
+            {
+            if (time <= 1260)
+                {
+                txSetColor (RGB (255, 255, 0));
+                txSelectFont ("Rockletter simple", 75);
+                txTextOut (400, 35, "Geometry");
+                txTextOut (490, 80, "Crash");
+                }
+            }
+        if (time >= 1521) // бирюзовый
+            {
+            if (time <= 1750)
+                {
+                txSetColor (RGB (17, 237, 237));
+                txSelectFont ("Rockletter simple", 75);
+                txTextOut (400, 35, "Geometry");
+                txTextOut (490, 80, "Crash");
+
+                }
+
+            }
+        if (time >= 1751) // серый
+            {
+            if (time <= 2000)
+                {
+                txSetColor (RGB (127, 127, 127));
+                txSelectFont ("Rockletter simple", 75);
+                txTextOut (400, 35, "Geometry");
+                txTextOut (490, 80, "Crash");
+                }
+
+            }
+        if (time >= 2001) // повторение
+            {
+            time -= 2001;
+            }
+
+//}
+
+
+        }
+
+
+    }
+void MainControl (double* vx, double* vy)
+    {
+    if (GetAsyncKeyState (VK_LEFT))  (*vx)--;
+    if (GetAsyncKeyState (VK_RIGHT)) (*vx)++;
+    if (GetAsyncKeyState (VK_UP))    (*vy)--;
+    if (GetAsyncKeyState (VK_DOWN))  (*vy)++;
+    if (GetAsyncKeyState ('Q'))
+        {
+        (*vx) = 0;
+        (*vy) = 0;
+        }
+    }
+
+
+
+
+

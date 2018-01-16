@@ -136,7 +136,7 @@ int main ()
 
     txDeleteDC (desk);
 
-    /*hummenmove ();
+    hummenmove ();
 
     portalappear ();
 
@@ -166,7 +166,7 @@ int main ()
 
     ghost (350, 205, 1, 138, 0, 0, 0); // призрак
 
-    desk();
+
 
     hummer (600, 791, 1, 1, 0, 0); // молот
 
@@ -187,7 +187,7 @@ int main ()
     Background ();
 
     portal ();
-    */
+
 
 
     }
@@ -247,7 +247,11 @@ void bushruns (HDC desk, HDC altar, HDC hegdehog, HDC bat, HDC rat, HDC solider,
                 }
 
         if (GetAsyncKeyState (VK_F4)) creatures [0].z_ -= 1;
-        if (GetAsyncKeyState (VK_F3)) creatures [0].z_ += 1;
+        if (GetAsyncKeyState (VK_F3)) creatures [0].z_ += 1;    object ButtonList [] = { {900, 60 , 250, 60, RED,      BLUE},
+                             {900, 160, 250, 60, BLUE,      RED},
+                             {900, 260, 250, 60, GREEN,     RED},
+                             {900, 360, 250, 60, YELLOW,   BLUE},
+                             {900, 460, 250, 60, BROWN, MAGENTA};
         if (GetAsyncKeyState (VK_F1)) amountOfGhostInAMouse += 0.1;
         if (GetAsyncKeyState (VK_F2)) amountOfGhostInAMouse -= 0.1;
         if (amountOfGhostInAMouse > 1) amountOfGhostInAMouse = 1;
@@ -945,8 +949,8 @@ void lenghh ()
 
 void timecount (int timeStart, HDC desk)
     {
-    txTransparentBlt (txDC(), txGetExtentX() - txGetExtentX()/1.2, txGetExtentY() - txGetExtentY()/1.2, 260, 110, desk, 0, 0, RGB (255, 0, 120));
-    char str [100] = "";
+    txTransparentBlt (txDC(), txGetExtentX() - txGetExtentX()/4.5, txGetExtentY() - txGetExtentY()/4.5, 260, 110, desk, 0, 0, RGB (255, 0, 120));
+    char str [5] = "";
     int time = (GetTickCount () - timeStart)/1000;
 
     if (time <= 60)
@@ -962,7 +966,7 @@ void timecount (int timeStart, HDC desk)
 
     txSetColor (TX_WHITE);
     txSelectFont ("Arial", 70);
-    txTextOut (690, 865, str);
+    txTextOut ( txGetExtentX() - txGetExtentX()/5, txGetExtentY() - txGetExtentY()/5, str);
 
 
 

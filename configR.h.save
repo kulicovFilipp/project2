@@ -1,0 +1,16 @@
+
+const int LeftOfTheGrafic = 40, TopOfTheGrafic = 40, RightOfTheGrafic = 1260, BottomOfTheGrafic = 660;
+const int x10 = -120, y10 = -10, x11 = -130, y11 = -23;
+const int LenghDesk = RightOfTheGrafic + 120, HightDesk = BottomOfTheGrafic + 40;
+const int XofKF  = LeftOfTheGrafic-15,  YofKF  = TopOfTheGrafic+5;
+const int XofSum = LeftOfTheGrafic, YofSum = TopOfTheGrafic+5;
+const COLORREF ButtonColor =   RGB (75, 135, 100);  //RGB (78, 156, 95);
+const COLORREF CountourColor = RGB (75 * 1.5, 135 * 1.5, 100 * 1.5);
+const COLORREF ShadowColor =   RGB (65, 66,  67);
+const COLORREF TextColor   =   RGB (255, 255, 0);   //RGB (255, 255, 0);
+const double Ycentre = (BottomOfTheGrafic + TopOfTheGrafic)/2;
+const double Xcentre = (RightOfTheGrafic +  LeftOfTheGrafic)/2;
+//const int WindowX = ;
+
+
+

@@ -1,0 +1,130 @@
+
+--------------------------------------------------
+TXLib сообщает:
+
+Программа: C:\Users\user\Desktop\project2\Geometry crash\Geometry crash.exe, файл: C:\Users\user\TX\TXLib.h, строка: 11042, функция: bool {anonymous}::TX::txBitBlt(HDC, double, double, double, double, HDC, double, double),
+
+Сообщение: Параметр "sourceImage" неверен. Возможно, этот холст не создан, или уже уничтожен, или не загрузилась картинка.
+
+#1: TXLib [Ver: 00173a, Rev: 105], Instance: 0x005002C0 (32-bit), Flags: CMdRe0, Thread: 0xCC4 (Main), GetLastError(): 13 (Недопустимые данные). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0041F93D in C:\Users\user\Desktop\project2\Geometry crash\Geometry crash.exe: txBitBlt() at C:/Users/user/TX/TXLib.h (11042)
+
+# 1 0x00427F28 in C:\Users\user\Desktop\project2\Geometry crash\Geometry crash.exe: menu() at C:/Users/user/Desktop/project2/Geometry crash/Geometry crash.cpp (26):
+
+     24:     txBitBlt (txDC(), 375, 9, 267, 86, Play_StartPage, 0, 0);
+     25: 
+=>   26:     txBitBlt (txDC(), 450, 350, 43, 43, GrayPlay, 0, 0);
+     27: 
+     28: 
+
+# 2 0x00427CA4 in C:\Users\user\Desktop\project2\Geometry crash\Geometry crash.exe: main() at C:/Users/user/Desktop/project2/Geometry crash/Geometry crash.cpp (15):
+
+     13:     HDC GrayPlay     = txLoadImage ("GrayPlayer");
+     14: 
+=>   15:     menu (MainImage, Play_StartPage, GrayPlay);
+     16:     }
+     17: 
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in bool {anonymous}::TX::txBitBlt(HDC, double, double, double, double, HDC, double, double) at C:\Users\user\TX\TXLib.h (11042):
+
+  11040:     {
+  11041: $1  if (_TX_HDC_FAILED (destImage))   return false;
+=>11042: $   if (_TX_HDC_FAILED (sourceImage)) return false;
+  11043: 
+  11044: $   POINT size = txGetExtent (sourceImage);
+
+# 1 in void menu(HDC, HDC, HDC) at C:\Users\user\Desktop\project2\Geometry crash\Geometry crash.cpp (26):
+
+     24:     txBitBlt (txDC(), 375, 9, 267, 86, Play_StartPage, 0, 0);
+     25: 
+=>   26:     txBitBlt (txDC(), 450, 350, 43, 43, GrayPlay, 0, 0);
+     27: 
+     28: 
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library) - TXLib [Ver: 00173a, Rev: 105]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	C:\Users\user\TX\TXLib.h
+Compiled:	Aug 29 2017 23:14:50, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Aug 29 2017 23:14:54
+
+Run file:	C:\Users\user\Desktop\project2\Geometry crash\Geometry crash.exe
+Directory:	C:\Users\user\Desktop\project2\Geometry crash
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib сообщает:
+
+Программа: C:\Users\user\Desktop\project2\Geometry crash\Geometry crash.exe, файл: C:\Users\user\TX\TXLib.h, строка: 11042, функция: bool {anonymous}::TX::txBitBlt(HDC, double, double, double, double, HDC, double, double),
+
+Сообщение: Параметр "sourceImage" неверен. Возможно, этот холст не создан, или уже уничтожен, или не загрузилась картинка.
+
+#1: TXLib [Ver: 00173a, Rev: 105], Instance: 0x005002C0 (32-bit), Flags: CMdRe0, Thread: 0x1968 (Main), GetLastError(): 13 (Недопустимые данные). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0041F93D in C:\Users\user\Desktop\project2\Geometry crash\Geometry crash.exe: txBitBlt() at C:/Users/user/TX/TXLib.h (11042)
+
+# 1 0x00427EF6 in C:\Users\user\Desktop\project2\Geometry crash\Geometry crash.exe: menu() at C:/Users/user/Desktop/project2/Geometry crash/Geometry crash.cpp (26):
+
+     24:     txBitBlt (txDC(), 375, 9, 267, 86, Play_StartPage, 0, 0);
+     25: 
+=>   26:     txBitBlt (txDC(), 450, 350, 43, 43, GrayPlay, 0, 0);
+     27: 
+     28:     while (time <= 150)
+
+# 2 0x00427CA4 in C:\Users\user\Desktop\project2\Geometry crash\Geometry crash.exe: main() at C:/Users/user/Desktop/project2/Geometry crash/Geometry crash.cpp (15):
+
+     13:     HDC GrayPlay     = txLoadImage ("GrayPlayer");
+     14: 
+=>   15:     menu (MainImage, Play_StartPage, GrayPlay);
+     16:     }
+     17: 
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in bool {anonymous}::TX::txBitBlt(HDC, double, double, double, double, HDC, double, double) at C:\Users\user\TX\TXLib.h (11042):
+
+  11040:     {
+  11041: $1  if (_TX_HDC_FAILED (destImage))   return false;
+=>11042: $   if (_TX_HDC_FAILED (sourceImage)) return false;
+  11043: 
+  11044: $   POINT size = txGetExtent (sourceImage);
+
+# 1 in void menu(HDC, HDC, HDC) at C:\Users\user\Desktop\project2\Geometry crash\Geometry crash.cpp (26):
+
+     24:     txBitBlt (txDC(), 375, 9, 267, 86, Play_StartPage, 0, 0);
+     25: 
+=>   26:     txBitBlt (txDC(), 450, 350, 43, 43, GrayPlay, 0, 0);
+     27: 
+     28:     while (time <= 150)
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library) - TXLib [Ver: 00173a, Rev: 105]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	C:\Users\user\TX\TXLib.h
+Compiled:	Aug 29 2017 23:25:13, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Aug 29 2017 23:25:17
+
+Run file:	C:\Users\user\Desktop\project2\Geometry crash\Geometry crash.exe
+Directory:	C:\Users\user\Desktop\project2\Geometry crash
+
+--------------------------------------------------
